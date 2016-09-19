@@ -10,9 +10,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
-var app_component_1 = require('./app.component');
 var forms_1 = require('@angular/forms');
-var hero_detail_component_1 = require("./hero.detail.component");
+var hero_detail_component_1 = require("./components/hero.detail/hero.detail.component");
+var heroes_component_1 = require("./components/heroes/heroes.component");
+var hero_service_1 = require("./components/service/hero.service");
+var dashboard_component_1 = require("./components/dashboard/dashboard.component");
+var app_routing_1 = require("./app.routing");
+var main_component_1 = require("./components/main/main.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -20,13 +24,19 @@ var AppModule = (function () {
         core_1.NgModule({
             imports: [
                 platform_browser_1.BrowserModule,
-                forms_1.FormsModule
+                forms_1.FormsModule,
+                app_routing_1.routing
             ],
             declarations: [
-                app_component_1.AppComponent,
-                hero_detail_component_1.HeroDetailComponent
+                main_component_1.MainComponent,
+                dashboard_component_1.DashboardComponent,
+                hero_detail_component_1.HeroDetailComponent,
+                heroes_component_1.HeroesComponent
             ],
-            bootstrap: [app_component_1.AppComponent]
+            providers: [
+                hero_service_1.HeroService
+            ],
+            bootstrap: [main_component_1.MainComponent]
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);

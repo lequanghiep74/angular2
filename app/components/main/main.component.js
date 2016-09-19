@@ -9,34 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var hero_service_1 = require("./hero.service");
-var AppComponent = (function () {
-    function AppComponent(heroService) {
-        this.heroService = heroService;
+var MainComponent = (function () {
+    function MainComponent() {
         this.title = 'Tour of Heroes';
     }
-    AppComponent.prototype.ngOnInit = function () {
-        this.getHeroes();
-    };
-    ;
-    AppComponent.prototype.getHeroes = function () {
-        var _this = this;
-        this.heroService.getHeroes().then(function (heroes) { return _this.heroes = heroes; });
-    };
-    ;
-    AppComponent.prototype.onSelect = function (hero) {
-        this.selectedHero = hero;
-    };
-    ;
-    AppComponent = __decorate([
+    MainComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            templateUrl: 'app/hero.html',
-            providers: [hero_service_1.HeroService]
+            templateUrl: 'app/components/main/main.html',
+            styleUrls: ['app/resource/css/app.component.css']
         }), 
-        __metadata('design:paramtypes', [hero_service_1.HeroService])
-    ], AppComponent);
-    return AppComponent;
+        __metadata('design:paramtypes', [])
+    ], MainComponent);
+    return MainComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.MainComponent = MainComponent;
+//# sourceMappingURL=main.component.js.map
